@@ -1,5 +1,6 @@
 .app {
   height: 95vh;
+  padding: 0px 64px;
   background-color: var(--secondary-color);
   display: grid;
   grid-template-areas:
@@ -12,6 +13,10 @@
 
 header {
   grid-area: header;
+  outline: 1px solid blue;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 main {
