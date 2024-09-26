@@ -1,11 +1,12 @@
-import React from 'react';
 import './App.css';
 
 function App() {
   return (
-    <React.Fragment>
-      <h1>Ciao</h1>
-    </React.Fragment>
+    <div className='app'>
+      <header>Header</header>
+      <main>Main</main>
+      <footer>Footer</footer>
+    </div>
   );
 }
 
