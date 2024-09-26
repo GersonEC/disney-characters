@@ -1,4 +1,4 @@
-import DisneyLogo from '/public/disney_logo.svg';
+import DisneyLogo from '/src/assets/disney_logo.svg';
 
 export const Header = () => {
   return (
