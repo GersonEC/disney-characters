@@ -3,7 +3,7 @@ import { Outlet, createRoute, createRootRoute } from '@tanstack/react-router';
 import { TanStackRouterDevtools } from '@tanstack/router-devtools';
 import App from './App';
 import { SearchResults } from './pages/SearchResults';
-import { Home } from './pages/Home';
+import { Home } from './pages/Home/Home';
 
 const rootRoute = createRootRoute({
   component: () => (
