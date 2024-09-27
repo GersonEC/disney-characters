@@ -14,8 +14,9 @@
 header {
   grid-area: header;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  gap: 30px;
 }
 
 main {
