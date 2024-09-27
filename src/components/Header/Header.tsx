@@ -18,7 +18,9 @@ export const Header: React.FC<Props> = ({ handleSubmit }) => {
         placeholder='Find a character...'
         handleSubmit={handleSubmit}
       />
-      <Button variant='primary'>USER</Button>
+      <Button variant='primary' style='rounded'>
+        U
+      </Button>
     </header>
   );
 };
