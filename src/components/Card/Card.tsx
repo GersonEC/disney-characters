@@ -21,9 +21,13 @@ export const Card: React.FC<CardProps> = ({ films, id, imgUrl, name }) => {
         <div className='card-info-films'>
           <p className='card-info-films-feature'>Featured Films</p>
           <ul>
-            <li className='card-info-films-item'>
-              Aladdin, The king and the ring, Aladdin and the King of Thieves...
-            </li>
+            {films.length > 0 ? (
+              films.map((film: string) => (
+                <li className='card-info-films-item'>{film} </li>
+              ))
+            ) : (
+              <p>There are no featured films</p>
+            )}
           </ul>
         </div>
         <a href='/'>VIEW PROFILE</a>

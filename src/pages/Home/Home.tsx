@@ -5,13 +5,14 @@ import { useAllCharacters } from '../../hooks/useAllCharacters';
 
 export const Home = () => {
   const allCharacters = useAllCharacters();
+  const limitedCharacters = allCharacters.slice(15, 50);
   const featureCharacters = allCharacters.slice(0, 4);
 
   return (
     <div className='home'>
       <section>
         <ul className='home-characters'>
-          {allCharacters.map((character: Character) => (
+          {limitedCharacters.map((character: Character) => (
             <li
               style={{ listStyle: 'none' }}
               key={`${character.name}-${character.id}`}
