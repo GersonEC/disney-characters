@@ -1,3 +1,4 @@
+import Button from '../../components/Button';
 import FeaturedCharacters from '../../components/FeaturedCharacters';
 import './Details.css';
 
@@ -43,7 +44,7 @@ export const Details = () => {
               <li>Frozen: Northern Lights</li>
             </ul>
           </div>
-          <button>Explore More Character Details</button>
+          <Button variant='primary'>Explore More Character Details</Button>
         </div>
       </section>
       <section>
