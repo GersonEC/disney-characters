@@ -13,8 +13,8 @@ export const Card: React.FC<CardProps> = ({ films, id, imgUrl, name }) => {
       <img
         className='card-image'
         src={imgUrl}
-        alt='Disney image'
-        title='title'
+        alt={`${name} profile picture`}
+        title={name}
       />
       <section className='card-info'>
         <p className='card-info-name'>{name}</p>
@@ -23,7 +23,9 @@ export const Card: React.FC<CardProps> = ({ films, id, imgUrl, name }) => {
           <ul>
             {films.length > 0 ? (
               films.map((film: string) => (
-                <li className='card-info-films-item'>{film} </li>
+                <li key={`${id}-${film}`} className='card-info-films-item'>
+                  {film}{' '}
+                </li>
               ))
             ) : (
               <p>There are no featured films</p>
