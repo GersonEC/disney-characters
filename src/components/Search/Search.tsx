@@ -22,6 +22,7 @@ export const Search: React.FC<SearchProps> = ({ handleSubmit, ...props }) => {
         onSubmit={(event: any) => handleSubmit(event, name)}
       >
         <input
+          className='input-search'
           id={props.id}
           type='search'
           name={props.name}

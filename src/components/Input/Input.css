@@ -1,0 +1,22 @@
+.input {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.input-field {
+  padding: 8px;
+  border: 1px solid var(--gray-light);
+  border-radius: 4px;
+}
+
+.input-field:focus {
+  border: none;
+  outline: 1px solid var(--primary-color);
+}
+
+.input-required {
+  color: var(--red);
+  font-weight: 600;
+  font-size: 0.9rem;
+}

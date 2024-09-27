@@ -6,6 +6,7 @@ import { SearchResults } from './pages/SearchResults';
 import { Home } from './pages/Home/Home';
 import { Details } from './pages/Details/Details';
 import { Profile } from './pages/Profile/Profile';
+import { EditProfile } from './pages/EditProfile/EditProfile';
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -42,9 +43,16 @@ const profileRoute = createRoute({
   component: () => <Profile />,
 });
 
+const editProfileRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/edit-profile',
+  component: () => <EditProfile />,
+});
+
 export const routeTree = rootRoute.addChildren([
   indexRoute,
   resultsRoute,
   detailsRoute,
   profileRoute,
+  editProfileRoute,
 ]);
