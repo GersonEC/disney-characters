@@ -1,54 +1,62 @@
 import Button from '../../components/Button';
 import FeaturedCharacters from '../../components/FeaturedCharacters';
+import { useAllCharacters } from '../../hooks/useAllCharacters';
+import { useGetCharacter } from '../../hooks/useGerCharacter';
 import './Details.css';
 
 export const Details = () => {
+  const allCharacters = useAllCharacters();
+  const featureCharacters = allCharacters.slice(0, 4);
+
+  const character = useGetCharacter({ id: 202 });
+
+  if (!character) return <p>Loading...</p>;
+
   return (
     <div className='details'>
       <section className='details-info'>
         <div>
           <img
             className='details-info_picture'
-            src='https://static.wikia.nocookie.net/disney/images/1/15/Arianna_Tangled.jpg'
-            alt='Queen Arianna image'
-            title='Queen Arianna'
+            src={character.imageUrl}
+            alt={`${character.name} image`}
+            title={character.name}
           />
         </div>
         <div className='details-info-data'>
-          <h2 className='details-info-data_name'>Queen Arianna</h2>
+          <h2 className='details-info-data_name'>{character.name}</h2>
           <p className='details-info-data_updated'>
             Last Updated December 20th, 2021
           </p>
           <div>
             <h3>Featured Films</h3>
             <ul>
-              <li>Frozen</li>
-              <li>Frozen2</li>
-              <li>Ralph Breaks the Internet</li>
+              {character.films.map((film: string) => (
+                <li key={`${character.id}-${film}`}>{film}</li>
+              ))}
             </ul>
           </div>
           <div>
             <h3>Short Films</h3>
             <ul>
-              <li>Frozen Fever</li>
-              <li>The art of Keeping Cool</li>
-              <li>Olaf's Frozen Adventure</li>
-              <li>Once Upon a Snowmane</li>
+              {character.shortFilms.map((film: string) => (
+                <li key={`${character.id}-${film}`}>{film}</li>
+              ))}
             </ul>
           </div>
           <div>
             <h3>TV Shows</h3>
             <ul>
-              <li>It's a Small World: The Animated Series</li>
-              <li>Once Upon a Time</li>
-              <li>Frozen: Northern Lights</li>
+              {character.tvShows.map((film: string) => (
+                <li key={`${character.id}-${film}`}>{film}</li>
+              ))}
             </ul>
           </div>
           <Button variant='primary'>Explore More Character Details</Button>
         </div>
       </section>
       <section>
-        <FeaturedCharacters />
+        <FeaturedCharacters featuredCharacters={featureCharacters} />
       </section>
     </div>
   );
