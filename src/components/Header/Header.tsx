@@ -1,3 +1,4 @@
+import Button from '../Button';
 import DisneyLogo from '/src/assets/disney_logo.svg';
 
 export const Header = () => {
@@ -5,7 +6,7 @@ export const Header = () => {
     <header className='header'>
       <img src={DisneyLogo} alt='Disney logo' height='34px' />
       <h1>FIND A CHARACTER</h1>
-      <button>USER</button>
+      <Button variant='primary'>USER</Button>
     </header>
   );
 };
