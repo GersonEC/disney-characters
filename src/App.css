@@ -8,7 +8,7 @@
     'main'
     'footer';
   grid-template-columns: 1fr;
-  grid-template-rows: 60px 2fr 84px;
+  grid-template-rows: 60px 1fr 84px;
 }
 
 header {

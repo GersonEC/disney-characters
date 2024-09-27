@@ -1,0 +1,17 @@
+.featured-characters {
+  background-color: var(--primary-color);
+  padding: 48px;
+}
+
+.featured-characters-list {
+  display: flex;
+  gap: 25px;
+  justify-content: center;
+  margin-bottom: 32px;
+}
+
+h2 {
+  color: var(--white);
+  font-size: 2.5rem;
+  text-align: center;
+}

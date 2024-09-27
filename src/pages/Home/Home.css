@@ -1,6 +1,7 @@
-.home {
-  padding: 48px;
+.home-characters {
   display: flex;
-  gap: 15px;
+  padding: 48px;
+  gap: 25px;
   flex-wrap: wrap;
+  justify-content: center;
 }
