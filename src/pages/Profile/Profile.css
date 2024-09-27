@@ -1,0 +1,24 @@
+.profile {
+  padding: 48px;
+}
+
+.profile-name {
+  color: var(--primary-color);
+}
+
+.profile-updated {
+  color: var(--gray);
+  margin-top: -10px;
+  margin-bottom: 36px;
+}
+
+.profile-info {
+  color: var(--primary-color);
+  margin: 16px 0;
+  font-size: 1.4rem;
+  font-weight: 500;
+}
+
+.profile-info:last-of-type {
+  margin-bottom: 36px;
+}

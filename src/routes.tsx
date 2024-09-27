@@ -5,6 +5,7 @@ import App from './App';
 import { SearchResults } from './pages/SearchResults';
 import { Home } from './pages/Home/Home';
 import { Details } from './pages/Details/Details';
+import { Profile } from './pages/Profile/Profile';
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -35,8 +36,15 @@ const detailsRoute = createRoute({
   component: () => <Details />,
 });
 
+const profileRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/profile',
+  component: () => <Profile />,
+});
+
 export const routeTree = rootRoute.addChildren([
   indexRoute,
   resultsRoute,
   detailsRoute,
+  profileRoute,
 ]);
