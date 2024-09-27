@@ -4,6 +4,7 @@ import { Outlet, createRoute, createRootRoute } from '@tanstack/react-router';
 import App from './App';
 import { SearchResults } from './pages/SearchResults';
 import { Home } from './pages/Home/Home';
+import { Details } from './pages/Details/Details';
 
 const rootRoute = createRootRoute({
   component: () => (
@@ -22,10 +23,20 @@ const indexRoute = createRoute({
   component: () => <Home />,
 });
 
-const aboutRoute = createRoute({
+const resultsRoute = createRoute({
   getParentRoute: () => rootRoute,
   path: '/results',
   component: () => <SearchResults />,
 });
 
-export const routeTree = rootRoute.addChildren([indexRoute, aboutRoute]);
+const detailsRoute = createRoute({
+  getParentRoute: () => rootRoute,
+  path: '/details',
+  component: () => <Details />,
+});
+
+export const routeTree = rootRoute.addChildren([
+  indexRoute,
+  resultsRoute,
+  detailsRoute,
+]);

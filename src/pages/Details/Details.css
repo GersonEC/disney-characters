@@ -1,0 +1,31 @@
+.details-info {
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 42px;
+  padding: 84px 0;
+}
+
+.details-info_picture {
+  border-radius: 16px;
+  height: 520px;
+}
+
+.details-info-data {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.details-info-data_name {
+  color: var(--black);
+  margin: 0;
+}
+
+.details-info-data_updated {
+  color: var(--gray);
+}
+
+h3 {
+  margin: 8px 0;
+}
