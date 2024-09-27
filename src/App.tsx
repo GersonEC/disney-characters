@@ -9,9 +9,9 @@ interface AppProps {
 }
 const App: React.FC<AppProps> = ({ children }) => {
   const [characterName, setCharacterName] = React.useState<string>('');
-  const characters = useFilterCharacters({ name: characterName });
+  const filterCharacters = useFilterCharacters({ name: characterName });
 
-  console.log({ characters });
+  console.log({ filterCharacters });
 
   const handleSubmit = (
     event: React.FormEvent<HTMLInputElement>,

@@ -1,13 +1,14 @@
 interface Character {
-  id: number;
-  films: string[];
-  shortFilms: string[];
-  tvShows: string[];
-  videoGames: string[];
-  parkAttractions: string[];
   allies: string[];
   enemies: string[];
-  name: string;
+  id: number;
   imageUrl: string;
+  films: string[];
+  name: string;
+  parkAttractions: string[];
+  shortFilms: string[];
+  sourceUrl: string;
+  tvShows: string[];
+  videoGames: string[];
   url: string;
 }

@@ -1,15 +1,30 @@
 import Card from '../Card';
 import './FeaturedCharacters.css';
 
-export const FeaturedCharacters = () => {
+interface Props {
+  featuredCharacters: Character[];
+}
+
+export const FeaturedCharacters: React.FC<Props> = ({ featuredCharacters }) => {
   return (
     <div className='featured-characters'>
       <h2>Featured Characters!</h2>
-      <section className='featured-characters-list'>
-        <Card />
-        <Card />
-        <Card />
-        <Card />
+      <section>
+        <ul className='featured-characters-list'>
+          {featuredCharacters.map((character: Character) => (
+            <li
+              style={{ listStyle: 'none' }}
+              key={`${character.name}-${character.id}`}
+            >
+              <Card
+                films={character.films}
+                id={character.id}
+                imgUrl={character.imageUrl}
+                name={character.name}
+              />
+            </li>
+          ))}
+        </ul>
       </section>
     </div>
   );
