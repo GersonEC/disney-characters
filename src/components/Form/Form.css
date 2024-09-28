@@ -1,9 +1,15 @@
 .form {
   display: flex;
   flex-direction: column;
+  gap: 20px;
 }
 
 .form-name {
+  display: flex;
+  gap: 20px;
+}
+
+.form-cta {
   display: flex;
   gap: 20px;
 }

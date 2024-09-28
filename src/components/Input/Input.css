@@ -4,6 +4,13 @@
   width: 100%;
 }
 
+.input-label {
+  color: var(--gray);
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 4px 0;
+}
+
 .input-field {
   padding: 8px;
   border: 1px solid var(--gray-light);

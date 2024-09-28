@@ -6,7 +6,7 @@ type InputProps = ComponentProps<'input'>;
 export const Input: React.FC<InputProps> = ({ ...props }) => {
   return (
     <div className='input'>
-      <label htmlFor={props.id} aria-label=''>
+      <label className='input-label' htmlFor={props.id} aria-label={props.name}>
         {props.name}
         <span className='input-required'>{props.required && '*'}</span>
       </label>

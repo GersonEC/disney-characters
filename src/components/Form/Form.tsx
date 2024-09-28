@@ -1,3 +1,4 @@
+import Button from '../Button';
 import Input from '../Input';
 import './Form.css';
 export const Form = () => {
@@ -18,6 +19,10 @@ export const Form = () => {
         name='Favorite Disney Movie'
         placeholder='Moana'
       />
+      <div className='form-cta'>
+        <Button variant='primary'>Update Profile</Button>
+        <Button variant='secondary'>Cancel</Button>
+      </div>
     </div>
   );
 };
