@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import Button from '../../components/Button';
 import './Profile.css';
 
@@ -12,7 +13,9 @@ export const Profile = () => {
       <p className='profile-info'>Favorite Disney Ride: Space Mountain</p>
       <p className='profile-info'>Favorite Disney Movie: Moana</p>
       <p className='profile-info'>Favorite Disneyland: Disney World, Florida</p>
-      <Button variant='primary'>Edite Profile</Button>
+      <Link to='/edit-profile'>
+        <Button variant='primary'>Edite Profile</Button>
+      </Link>
     </div>
   );
 };

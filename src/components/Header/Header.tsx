@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router';
 import Button from '../Button';
 import Search from '../Search';
 import DisneyLogo from '/src/assets/disney_logo.svg';
+import UserIcon from '/src/assets/user-icon.svg';
 
 interface Props {
   handleSubmit: (
@@ -21,9 +22,11 @@ export const Header: React.FC<Props> = ({ handleSubmit }) => {
         placeholder='Find a character...'
         handleSubmit={handleSubmit}
       />
-      <Button variant='primary' style='rounded'>
-        U
-      </Button>
+      <Link to='/profile'>
+        <Button variant='primary' style='rounded'>
+          <img src={UserIcon} alt='User icon' height='26px' />
+        </Button>
+      </Link>
     </header>
   );
 };
