@@ -20,7 +20,7 @@ export const FeaturedCharacters: React.FC<Props> = ({ featuredCharacters }) => {
               <Card
                 films={character.films}
                 id={character._id}
-                imgUrl={character.imageUrl}
+                imgUrl={character.imageUrl ?? ''}
                 name={character.name}
               />
             </li>
