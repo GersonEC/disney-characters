@@ -6,19 +6,23 @@ import { Character } from '../../hooks/useGetCharacter';
 import './Home.css';
 import { CharacterNameContext } from '../../contexts/CharacterNameContext';
 import Loader from '../../components/Loader';
+import Error from '../../components/Error';
 
 export const Home = () => {
   const characterName = useContext(CharacterNameContext);
   const { status, data: characters } = useFilterCharacters(characterName);
 
   if (status === 'pending') return <Loader />;
-  if (status === 'error') return <h1>Error</h1>;
+  if (status === 'error') return <Error />;
 
   if (characters) {
     const featureCharacters = characters.slice(0, 4);
     return (
       <div className='home'>
         <section>
+          {characterName && (
+            <h1 className='home-search'>Search Results - {characterName}</h1>
+          )}
           <ul className='home-characters'>
             {characters.length > 0 ? (
               characters.map((character: Character) => (

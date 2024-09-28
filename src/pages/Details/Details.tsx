@@ -7,6 +7,7 @@ import { useFilterCharacters } from '../../hooks/useFilterCharacters';
 import DefaultImage from '/src/assets/disney-default-image.jpg';
 import Loader from '../../components/Loader';
 import './Details.css';
+import React from 'react';
 
 export const Details = () => {
   const { characterId } = rootRoute.useParams();
@@ -14,6 +15,10 @@ export const Details = () => {
   const featureCharacters = filterCharacters && filterCharacters.slice(0, 4);
 
   const { status, data: character } = useGetCharacter({ id: characterId });
+
+  React.useLayoutEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   if (status === 'pending') return <Loader />;
   if (status === 'error') return <h1>Error</h1>;

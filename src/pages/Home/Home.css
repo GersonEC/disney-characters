@@ -5,3 +5,8 @@
   flex-wrap: wrap;
   justify-content: center;
 }
+
+.home-search {
+  display: flex;
+  justify-content: center;
+}
