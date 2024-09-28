@@ -5,6 +5,7 @@ import { useGetCharacter } from '../../hooks/useGetCharacter';
 import { rootRoute } from '../../routes';
 import { useFilterCharacters } from '../../hooks/useFilterCharacters';
 import DefaultImage from '/src/assets/disney-default-image.jpg';
+import Loader from '../../components/Loader';
 import './Details.css';
 
 export const Details = () => {
@@ -14,7 +15,7 @@ export const Details = () => {
 
   const { status, data: character } = useGetCharacter({ id: characterId });
 
-  if (status === 'pending') return <h1>Loading...</h1>;
+  if (status === 'pending') return <Loader />;
   if (status === 'error') return <h1>Error</h1>;
 
   if (character) {

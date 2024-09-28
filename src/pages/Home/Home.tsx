@@ -5,12 +5,13 @@ import { useFilterCharacters } from '../../hooks/useFilterCharacters';
 import { Character } from '../../hooks/useGetCharacter';
 import './Home.css';
 import { CharacterNameContext } from '../../contexts/CharacterNameContext';
+import Loader from '../../components/Loader';
 
 export const Home = () => {
   const characterName = useContext(CharacterNameContext);
   const { status, data: characters } = useFilterCharacters(characterName);
 
-  if (status === 'pending') return <h1>Loading...</h1>;
+  if (status === 'pending') return <Loader />;
   if (status === 'error') return <h1>Error</h1>;
 
   if (characters) {
