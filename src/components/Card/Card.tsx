@@ -14,7 +14,7 @@ export const Card: React.FC<CardProps> = ({ films, id, imgUrl, name }) => {
     <div className='card'>
       <img
         className='card-image'
-        src={imgUrl ?? DefaultImage}
+        src={imgUrl || DefaultImage}
         alt={`${name} profile picture`}
         title={name}
       />

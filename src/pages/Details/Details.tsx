@@ -1,29 +1,30 @@
 import { Link } from '@tanstack/react-router';
 import Button from '../../components/Button';
 import FeaturedCharacters from '../../components/FeaturedCharacters';
-import { useAllCharacters } from '../../hooks/useAllCharacters';
 import { useGetCharacter } from '../../hooks/useGetCharacter';
 import { rootRoute } from '../../routes';
+import { useFilterCharacters } from '../../hooks/useFilterCharacters';
+import DefaultImage from '/src/assets/disney-default-image.jpg';
 import './Details.css';
 
 export const Details = () => {
   const { characterId } = rootRoute.useParams();
-  const allCharacters = useAllCharacters();
-  const featureCharacters = allCharacters.slice(0, 4);
+  const { data: filterCharacters } = useFilterCharacters();
+  const featureCharacters = filterCharacters && filterCharacters.slice(0, 4);
 
   const { status, data: character } = useGetCharacter({ id: characterId });
 
   if (status === 'pending') return <h1>Loading...</h1>;
   if (status === 'error') return <h1>Error</h1>;
 
-  if (character)
+  if (character) {
     return (
       <div className='details'>
         <section className='details-info'>
           <div>
             <img
               className='details-info_picture'
-              src={character.imageUrl}
+              src={character.imageUrl || DefaultImage}
               alt={`${character.name} image`}
               title={character.name}
             />
@@ -79,8 +80,9 @@ export const Details = () => {
           </div>
         </section>
         <section>
-          <FeaturedCharacters featuredCharacters={featureCharacters} />
+          <FeaturedCharacters featuredCharacters={featureCharacters ?? []} />
         </section>
       </div>
     );
+  }
 };
