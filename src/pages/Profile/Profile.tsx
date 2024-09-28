@@ -13,7 +13,7 @@ export const Profile = () => {
       <p className='profile-info'>Favorite Disney Ride: Space Mountain</p>
       <p className='profile-info'>Favorite Disney Movie: Moana</p>
       <p className='profile-info'>Favorite Disneyland: Disney World, Florida</p>
-      <Link to='/edit-profile'>
+      <Link to='/edit-profile' aria-label='Go to edit profile page'>
         <Button variant='primary'>Edite Profile</Button>
       </Link>
     </div>

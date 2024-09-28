@@ -13,7 +13,7 @@ interface Props {
 export const Header: React.FC<Props> = ({ handleSubmit }) => {
   return (
     <header className='header'>
-      <Link to='/'>
+      <Link to='/' aria-label='Go to home page'>
         <img src={DisneyLogo} alt='Disney logo' height='34px' />
       </Link>
       <Search
@@ -22,7 +22,7 @@ export const Header: React.FC<Props> = ({ handleSubmit }) => {
         placeholder='Find a character...'
         handleSubmit={handleSubmit}
       />
-      <Link to='/profile'>
+      <Link to='/profile' aria-label='Go to profile page'>
         <Button variant='primary' style='rounded'>
           <img src={UserIcon} alt='User icon' height='26px' />
         </Button>

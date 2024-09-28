@@ -67,7 +67,11 @@ export const Details = () => {
               )}
             </ul>
           </div>
-          <Link to={character.sourceUrl} target='_blank'>
+          <Link
+            to={character.sourceUrl}
+            target='_blank'
+            aria-label='Explore More Character Details'
+          >
             <Button variant='primary'>Explore More Character Details</Button>
           </Link>
         </div>

@@ -23,7 +23,7 @@ export const Form = () => {
       />
       <div className='form-cta'>
         <Button variant='primary'>Update Profile</Button>
-        <Link to='/profile'>
+        <Link to='/profile' aria-label='cancel button'>
           <Button variant='secondary'>Cancel</Button>
         </Link>
       </div>

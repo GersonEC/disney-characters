@@ -34,7 +34,9 @@ export const Card: React.FC<CardProps> = ({ films, id, imgUrl, name }) => {
             )}
           </ul>
         </div>
-        <Link to={`/details/${id}`}>VIEW PROFILE</Link>
+        <Link to={`/details/${id}`} aria-label='view character profile'>
+          VIEW PROFILE
+        </Link>
       </section>
     </div>
   );
