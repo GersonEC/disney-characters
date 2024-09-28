@@ -2,7 +2,7 @@ import { Link } from '@tanstack/react-router';
 import Button from '../../components/Button';
 import FeaturedCharacters from '../../components/FeaturedCharacters';
 import { useAllCharacters } from '../../hooks/useAllCharacters';
-import { useGetCharacter } from '../../hooks/useGerCharacter';
+import { useGetCharacter } from '../../hooks/useGetCharacter';
 import { rootRoute } from '../../routes';
 import './Details.css';
 

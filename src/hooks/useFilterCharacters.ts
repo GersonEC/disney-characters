@@ -1,11 +1,17 @@
 import React from 'react';
+import { CharacterSchema } from '../utils/schemas';
+import { z } from 'zod';
+
+export const ZodSchema = z.object(CharacterSchema).array();
+
+export type CharacterList = z.infer<typeof ZodSchema>;
 
 export const useFilterCharacters = ({
   name,
 }: {
   name: string;
-}): Character[] => {
-  const [characters, setCharacters] = React.useState<Character[]>([]);
+}): CharacterList => {
+  const [characters, setCharacters] = React.useState<CharacterList>([]);
 
   React.useEffect(() => {
     async function getCharacters() {
@@ -13,7 +19,8 @@ export const useFilterCharacters = ({
         `https://api.disneyapi.dev/character?name=${name}`
       );
       const data = await res.json();
-      setCharacters(data.data);
+      const characters = ZodSchema.parse(data.data);
+      setCharacters(characters);
     }
     getCharacters();
   }, [name]);

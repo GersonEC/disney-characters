@@ -1,3 +1,4 @@
+import { Character } from '../../hooks/useGetCharacter';
 import Card from '../Card';
 import './FeaturedCharacters.css';
 

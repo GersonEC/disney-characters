@@ -1,6 +1,7 @@
 import Card from '../../components/Card';
 import FeaturedCharacters from '../../components/FeaturedCharacters';
 import { useAllCharacters } from '../../hooks/useAllCharacters';
+import { Character } from '../../hooks/useGetCharacter';
 import './Home.css';
 
 export const Home = () => {
