@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router';
 import './Card.css';
+import DefaultImage from '/src/assets/disney-default-image.jpg';
 
 interface CardProps {
   films: string[];
@@ -13,7 +14,7 @@ export const Card: React.FC<CardProps> = ({ films, id, imgUrl, name }) => {
     <div className='card'>
       <img
         className='card-image'
-        src={imgUrl}
+        src={imgUrl ?? DefaultImage}
         alt={`${name} profile picture`}
         title={name}
       />

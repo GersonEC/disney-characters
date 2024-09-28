@@ -1,6 +1,8 @@
+import { Link } from '@tanstack/react-router';
 import Button from '../Button';
 import Input from '../Input';
 import './Form.css';
+
 export const Form = () => {
   return (
     <div className='form'>
@@ -21,7 +23,9 @@ export const Form = () => {
       />
       <div className='form-cta'>
         <Button variant='primary'>Update Profile</Button>
-        <Button variant='secondary'>Cancel</Button>
+        <Link to='/profile'>
+          <Button variant='secondary'>Cancel</Button>
+        </Link>
       </div>
     </div>
   );
