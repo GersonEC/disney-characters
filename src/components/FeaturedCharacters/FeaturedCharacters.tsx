@@ -14,11 +14,11 @@ export const FeaturedCharacters: React.FC<Props> = ({ featuredCharacters }) => {
           {featuredCharacters.map((character: Character) => (
             <li
               style={{ listStyle: 'none' }}
-              key={`${character.name}-${character.id}`}
+              key={`${character.name}-${character._id}`}
             >
               <Card
                 films={character.films}
-                id={character.id}
+                id={character._id}
                 imgUrl={character.imageUrl}
                 name={character.name}
               />

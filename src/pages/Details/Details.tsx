@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import Button from '../../components/Button';
 import FeaturedCharacters from '../../components/FeaturedCharacters';
 import { useAllCharacters } from '../../hooks/useAllCharacters';
@@ -10,7 +11,6 @@ export const Details = () => {
   const allCharacters = useAllCharacters();
   const featureCharacters = allCharacters.slice(0, 4);
 
-  console.log({ characterId });
   const character = useGetCharacter({ id: characterId });
 
   if (!character) return <p>Loading...</p>;
@@ -34,28 +34,42 @@ export const Details = () => {
           <div>
             <h3>Featured Films</h3>
             <ul>
-              {character.films.map((film: string) => (
-                <li key={`${character.id}-${film}`}>{film}</li>
-              ))}
+              {character.films.length > 0 ? (
+                character.films.map((film: string) => (
+                  <li key={`${character._id}-${film}`}>{film}</li>
+                ))
+              ) : (
+                <p>There are no featured films</p>
+              )}
             </ul>
           </div>
           <div>
             <h3>Short Films</h3>
             <ul>
-              {character.shortFilms.map((film: string) => (
-                <li key={`${character.id}-${film}`}>{film}</li>
-              ))}
+              {character.shortFilms.length > 0 ? (
+                character.shortFilms.map((film: string) => (
+                  <li key={`${character._id}-${film}`}>{film}</li>
+                ))
+              ) : (
+                <p>There are no short films</p>
+              )}
             </ul>
           </div>
           <div>
             <h3>TV Shows</h3>
             <ul>
-              {character.tvShows.map((film: string) => (
-                <li key={`${character.id}-${film}`}>{film}</li>
-              ))}
+              {character.tvShows.length > 0 ? (
+                character.tvShows.map((film: string) => (
+                  <li key={`${character._id}-${film}`}>{film}</li>
+                ))
+              ) : (
+                <p>There are no tv shows</p>
+              )}
             </ul>
           </div>
-          <Button variant='primary'>Explore More Character Details</Button>
+          <Link to={character.sourceUrl} target='_blank'>
+            <Button variant='primary'>Explore More Character Details</Button>
+          </Link>
         </div>
       </section>
       <section>

@@ -11,8 +11,6 @@ const App: React.FC<AppProps> = ({ children }) => {
   const [characterName, setCharacterName] = React.useState<string>('');
   const filterCharacters = useFilterCharacters({ name: characterName });
 
-  console.log({ filterCharacters });
-
   const handleSubmit = (
     event: React.FormEvent<HTMLInputElement>,
     name: string
