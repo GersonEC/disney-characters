@@ -8,7 +8,7 @@ import { Details } from './pages/Details/Details';
 import { Profile } from './pages/Profile/Profile';
 import { EditProfile } from './pages/EditProfile/EditProfile';
 
-const rootRoute = createRootRoute({
+export const rootRoute = createRootRoute({
   component: () => (
     <React.Fragment>
       <App>
@@ -33,7 +33,7 @@ const resultsRoute = createRoute({
 
 const detailsRoute = createRoute({
   getParentRoute: () => rootRoute,
-  path: '/details',
+  path: '/details/$characterId',
   component: () => <Details />,
 });
 

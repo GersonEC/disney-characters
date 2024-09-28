@@ -9,6 +9,8 @@
 .details-info_picture {
   border-radius: 16px;
   height: 520px;
+  max-width: 450px;
+  object-fit: cover;
 }
 
 .details-info-data {

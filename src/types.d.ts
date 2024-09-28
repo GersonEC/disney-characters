@@ -1,7 +1,7 @@
 interface Character {
   allies: string[];
   enemies: string[];
-  id: number;
+  _id: number;
   imageUrl: string;
   films: string[];
   name: string;

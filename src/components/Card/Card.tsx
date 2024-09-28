@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import './Card.css';
 
 interface CardProps {
@@ -32,7 +33,7 @@ export const Card: React.FC<CardProps> = ({ films, id, imgUrl, name }) => {
             )}
           </ul>
         </div>
-        <a href='/'>VIEW PROFILE</a>
+        <Link to={`/details/${id}`}>VIEW PROFILE</Link>
       </section>
     </div>
   );

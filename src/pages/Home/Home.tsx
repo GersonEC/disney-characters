@@ -1,13 +1,12 @@
 import Card from '../../components/Card';
-import './Home.css';
 import FeaturedCharacters from '../../components/FeaturedCharacters';
 import { useAllCharacters } from '../../hooks/useAllCharacters';
+import './Home.css';
 
 export const Home = () => {
   const allCharacters = useAllCharacters();
   const limitedCharacters = allCharacters.slice(15, 50);
   const featureCharacters = allCharacters.slice(0, 4);
-
   return (
     <div className='home'>
       <section>
@@ -15,11 +14,11 @@ export const Home = () => {
           {limitedCharacters.map((character: Character) => (
             <li
               style={{ listStyle: 'none' }}
-              key={`${character.name}-${character.id}`}
+              key={`${character.name}-${character._id}`}
             >
               <Card
                 films={character.films}
-                id={character.id}
+                id={character._id}
                 imgUrl={character.imageUrl}
                 name={character.name}
               />

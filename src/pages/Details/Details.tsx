@@ -2,13 +2,16 @@ import Button from '../../components/Button';
 import FeaturedCharacters from '../../components/FeaturedCharacters';
 import { useAllCharacters } from '../../hooks/useAllCharacters';
 import { useGetCharacter } from '../../hooks/useGerCharacter';
+import { rootRoute } from '../../routes';
 import './Details.css';
 
 export const Details = () => {
+  const { characterId } = rootRoute.useParams();
   const allCharacters = useAllCharacters();
   const featureCharacters = allCharacters.slice(0, 4);
 
-  const character = useGetCharacter({ id: 202 });
+  console.log({ characterId });
+  const character = useGetCharacter({ id: characterId });
 
   if (!character) return <p>Loading...</p>;
 

@@ -1,3 +1,4 @@
+import { Link } from '@tanstack/react-router';
 import Button from '../Button';
 import Search from '../Search';
 import DisneyLogo from '/src/assets/disney_logo.svg';
@@ -11,7 +12,9 @@ interface Props {
 export const Header: React.FC<Props> = ({ handleSubmit }) => {
   return (
     <header className='header'>
-      <img src={DisneyLogo} alt='Disney logo' height='34px' />
+      <Link to='/'>
+        <img src={DisneyLogo} alt='Disney logo' height='34px' />
+      </Link>
       <Search
         id='character'
         name='character'
