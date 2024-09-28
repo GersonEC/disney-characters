@@ -2,14 +2,13 @@ import React from 'react';
 import './App.css';
 import Footer from './components/Footer';
 import { Header } from './components/Header/Header';
-import { useFilterCharacters } from './hooks/useFilterCharacters';
+import { CharacterNameContext } from './contexts/CharacterNameContext';
 
 interface AppProps {
   children: React.ReactNode;
 }
 const App: React.FC<AppProps> = ({ children }) => {
   const [characterName, setCharacterName] = React.useState<string>('');
-  const filterCharacters = useFilterCharacters({ name: characterName });
 
   const handleSubmit = (
     event: React.FormEvent<HTMLInputElement>,
@@ -21,9 +20,11 @@ const App: React.FC<AppProps> = ({ children }) => {
 
   return (
     <div className='app'>
-      <Header handleSubmit={(event, name) => handleSubmit(event, name)} />
-      <main>{children}</main>
-      <Footer />
+      <CharacterNameContext.Provider value={characterName}>
+        <Header handleSubmit={(event, name) => handleSubmit(event, name)} />
+        <main>{children}</main>
+        <Footer />
+      </CharacterNameContext.Provider>
     </div>
   );
 };
