@@ -1,8 +1,8 @@
-import { createRouter } from '@tanstack/react-router';
-import { routeTree } from '../routes';
+import { createRouter, createRootRoute } from '@tanstack/react-router';
 
+const rootRoute = createRootRoute();
 export const router = createRouter({
-  routeTree,
+  routeTree: rootRoute,
 });
 
 export const stateOptions = ['CA', 'SF', 'NY', 'TX'];
