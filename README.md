@@ -1,4 +1,4 @@
-# Disney Characters application
+# Disney Character's application
 
 For educational use only. All characters and content are the property of Disney. This test is for private use and development testing only and should not be distributed for public consumption.
 
@@ -26,8 +26,8 @@ The api's to get all the characters informations has been taken from this url: [
 
 The following are the main libraries inside the application
 
-- tanstack/react-query to handle the server state that the derive from api cals.
-- tanstack/router to handle the routing within the application.
-- testing-library/react for testing purposes
-- zod to validate the types of our server state
+- [tanstack/query](https://tanstack.com/query/latest) to handle the server state that the derive from api cals.
+- [tanstack/router](https://tanstack.com/router/latest) to handle the routing within the application.
+- [testing-library/react](https://testing-library.com/) for testing purposes.
+- [zod](https://www.npmjs.com/package/react-loading-icons) to validate the types of our server state
 - react-loading-icons to show a feedback to the user when loading server state.
