@@ -26,6 +26,10 @@ interface Response {
   data?: CharacterList;
 }
 
+/**
+ * useFilterCharacters is a hook to retrieve all the characters based on a given name.
+ * @param {string} name - the name of the character we want information.
+ */
 export const useFilterCharacters = (name: string = ''): Response => {
   const { status, data } = useQuery({
     queryKey: ['characters', name],

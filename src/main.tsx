@@ -15,6 +15,10 @@ declare module '@tanstack/react-router' {
   }
 }
 
+/**
+ * Our application is wrapped with QueryClientProvider and RouterProvider
+ * to manage the server state and routing within the application.
+ */
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <QueryClientProvider client={queryClient}>

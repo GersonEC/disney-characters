@@ -45,6 +45,9 @@ function reducerfn(state: User, action: UserAction) {
   throw Error('Unknown action.');
 }
 
+/**
+ * useUser is a hook to manage the user information.
+ */
 export const useUser = () => {
   const [state, dispatch] = useReducer(reducerfn, initialUser);
 

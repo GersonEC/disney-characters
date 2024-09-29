@@ -18,6 +18,10 @@ interface Response {
   data?: Character;
 }
 
+/**
+ * useGetCharacter is a hook to retrieve the character information.
+ * @param {numer} id - The id of the character.
+ */
 export const useGetCharacter = ({ id }: { id: number }): Response => {
   const { status, data } = useQuery({
     queryKey: ['character', id],
