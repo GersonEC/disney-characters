@@ -1,5 +1,7 @@
 # Disney Characters application
 
+For educational use only. All characters and content are the property of Disney. This test is for private use and development testing only and should not be distributed for public consumption.
+
 ## Setup
 
 After cloning the repository and get inside of it, run the following scripts to install the dependencies and run the local application:
