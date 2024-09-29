@@ -1,13 +1,15 @@
 import React from 'react';
-import './App.css';
+import { useNavigate } from '@tanstack/react-router';
 import Footer from './components/Footer';
 import { Header } from './components/Header/Header';
 import { CharacterNameContext } from './contexts/CharacterNameContext';
+import './App.css';
 
 interface AppProps {
   children: React.ReactNode;
 }
 const App: React.FC<AppProps> = ({ children }) => {
+  const navigate = useNavigate();
   const [characterName, setCharacterName] = React.useState<string>('');
 
   const handleSubmit = (
@@ -16,16 +18,17 @@ const App: React.FC<AppProps> = ({ children }) => {
   ) => {
     event.preventDefault();
     setCharacterName(name);
+    navigate({ to: '/' });
   };
 
   return (
-    <div className='app'>
-      <CharacterNameContext.Provider value={characterName}>
+    <CharacterNameContext.Provider value={characterName}>
+      <div className='app'>
         <Header handleSubmit={(event, name) => handleSubmit(event, name)} />
         <main>{children}</main>
         <Footer />
-      </CharacterNameContext.Provider>
-    </div>
+      </div>
+    </CharacterNameContext.Provider>
   );
 };
 

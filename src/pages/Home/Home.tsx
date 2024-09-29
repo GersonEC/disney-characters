@@ -3,20 +3,23 @@ import Card from '../../components/Card';
 import FeaturedCharacters from '../../components/FeaturedCharacters';
 import { useFilterCharacters } from '../../hooks/useFilterCharacters';
 import { Character } from '../../hooks/useGetCharacter';
-import './Home.css';
 import { CharacterNameContext } from '../../contexts/CharacterNameContext';
 import Loader from '../../components/Loader';
 import Error from '../../components/Error';
+import './Home.css';
 
 export const Home = () => {
   const characterName = useContext(CharacterNameContext);
   const { status, data: characters } = useFilterCharacters(characterName);
+  const { status: featureCharactersStatus, data: featuredCharacters } =
+    useFilterCharacters('');
 
-  if (status === 'pending') return <Loader />;
-  if (status === 'error') return <Error />;
+  if (status === 'pending' || featureCharactersStatus === 'pending')
+    return <Loader />;
+  if (status === 'error' || featureCharactersStatus === 'error')
+    return <Error />;
 
-  if (characters) {
-    const featureCharacters = characters.slice(0, 4);
+  if (characters && featuredCharacters) {
     return (
       <div className='home'>
         <section>
@@ -41,13 +44,15 @@ export const Home = () => {
             ) : (
               <p>
                 There are no Characters to show, please use the search bar to
-                look for someone.
+                look for someone else.
               </p>
             )}
           </ul>
         </section>
         <section>
-          <FeaturedCharacters featuredCharacters={featureCharacters} />
+          <FeaturedCharacters
+            featuredCharacters={featuredCharacters?.slice(5, 9)}
+          />
         </section>
       </div>
     );
