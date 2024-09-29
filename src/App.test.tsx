@@ -7,6 +7,6 @@ import { expect, test } from 'vitest';
 import App from './App';
 
 test('should render properly', () => {
-  render(<App />);
+  render(<App children={<></>} />);
   expect(true).toBeTruthy();
 });

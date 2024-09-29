@@ -1,7 +1,7 @@
 .card {
   display: flex;
   flex-direction: column;
-  height: 420px;
+  height: 440px;
   width: 240px;
   background-color: var(--white);
 }
@@ -15,21 +15,41 @@
 .card-info {
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  align-items: center;
-  justify-content: center;
 }
 
 .card-info-name {
   font-size: 1.2rem;
   font-weight: 600;
   margin-top: 8px;
+  padding: 8px 0;
+  text-align: center;
 }
 
 .card-info-films-feature {
   text-align: center;
   font-size: 1.2rem;
   font-weight: 500;
+}
+
+.card-info-films-list {
+  padding-left: 0;
+  padding: 0 4px;
+  margin: auto;
+  text-align: center;
+  height: 60px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+.card-info-films-item {
+  list-style: none;
+  display: inline;
+}
+
+.card-info-cta {
+  margin: auto;
+  padding-top: 8px;
 }
 
 ul,
