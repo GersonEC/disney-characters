@@ -6,3 +6,11 @@ export const router = createRouter({
 });
 
 export const stateOptions = ['CA', 'SF', 'NY', 'TX'];
+export const disneylandOptions = [
+  'Disney World, Florida',
+  'Disneyland Paris',
+  'Hong Kong Disneyland',
+  'Disneyland Park',
+  'Tokio Disneyland',
+  'Shanghai Disneyland',
+];

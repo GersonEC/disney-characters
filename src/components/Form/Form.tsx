@@ -1,19 +1,69 @@
-import { Link } from '@tanstack/react-router';
+import { Link, useNavigate } from '@tanstack/react-router';
 import Button from '../Button';
 import Input from '../Input';
-import './Form.css';
 import { Select } from '../Select/Select';
-import { stateOptions } from '../../utils/mocks';
+import { disneylandOptions, stateOptions } from '../../utils/mocks';
 import { DatePicker } from '../DatePicker/DatePicker';
+import { User, useUser } from '../../hooks/useUser';
+import './Form.css';
 
-export const Form = () => {
+export const Form: React.FC = () => {
+  const navigate = useNavigate();
+  const { updateUser } = useUser();
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    const user: User = {
+      firstName: event.target[0].value,
+      lastName: event.target[1].value,
+      birthDate: new Date(event.target[2].value),
+      city: event.target[3].value,
+      state: event.target[4].value,
+      favoriteCharacter: event.target[5].value,
+      favoriteMovie: event.target[6].value,
+      favoriteLocation: event.target[7].value,
+    };
+    if (window.confirm('Do you really want to update your profile?')) {
+      alert('Profile updated successfully.');
+      updateUser(user);
+      navigate({
+        to: '/profile',
+      });
+    }
+  };
+
   return (
-    <div className='form'>
+    <form className='form' onSubmit={handleSubmit}>
       <div className='form-name'>
         <Input id='first-name' name='First Name' placeholder='John' required />
         <Input id='last-name' name='Last Name' placeholder='Doe' required />
       </div>
-      <Input id='city' name='City' placeholder='San Francisco' />
+      <DatePicker label='Birth Date' required />
+      <div className='form-location'>
+        <Input id='city' name='City' placeholder='San Francisco' />
+        <Select id='state-select' aria-expanded={false} label='State'>
+          <option
+            id={'select-default'}
+            aria-selected={true}
+            aria-label={'select-default'}
+            value={''}
+          >
+            Choose a state
+          </option>
+          {stateOptions.map((state: string) => (
+            <option
+              key={state}
+              id={state}
+              aria-selected={false}
+              aria-label={state}
+              value={state}
+            >
+              {state}
+            </option>
+          ))}
+        </Select>
+      </div>
       <Input
         id='favorite-character'
         name='Favorite Disney Character'
@@ -24,33 +74,39 @@ export const Form = () => {
         name='Favorite Disney Movie'
         placeholder='Moana'
       />
-      <DatePicker label='Birth Date' required />
-      <Select id='state-select' aria-expanded={false} label='State'>
+      <Select
+        id='disneyland-select'
+        aria-expanded={false}
+        label='Favorite Disneyland'
+      >
         <option
           id={'select-default'}
           aria-selected={true}
           aria-label={'select-default'}
           value={''}
         >
-          Choose a state
+          Choose a Disneyland
         </option>
-        {stateOptions.map((state: string) => (
+        {disneylandOptions.map((location: string) => (
           <option
-            id={state}
+            key={location}
+            id={location}
             aria-selected={false}
-            aria-label={state}
-            value={state}
+            aria-label={location}
+            value={location}
           >
-            {state}
+            {location}
           </option>
         ))}
       </Select>
       <div className='form-cta'>
-        <Button variant='primary'>Update Profile</Button>
+        <Button type='submit' variant='primary'>
+          Update Profile
+        </Button>
         <Link to='/profile' aria-label='cancel button'>
           <Button variant='secondary'>Cancel</Button>
         </Link>
       </div>
-    </div>
+    </form>
   );
 };

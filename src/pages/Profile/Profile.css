@@ -22,3 +22,8 @@
 .profile-info:last-of-type {
   margin-bottom: 36px;
 }
+
+.profile-cta {
+  display: flex;
+  gap: 20px;
+}

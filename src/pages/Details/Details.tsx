@@ -6,8 +6,8 @@ import { rootRoute } from '../../routes';
 import { useFilterCharacters } from '../../hooks/useFilterCharacters';
 import DefaultImage from '/src/assets/disney-default-image.jpg';
 import Loader from '../../components/Loader';
-import './Details.css';
 import React from 'react';
+import './Details.css';
 
 export const Details = () => {
   const { characterId } = rootRoute.useParams();
