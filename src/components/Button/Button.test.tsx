@@ -2,21 +2,31 @@
  * @vitest-environment jsdom
  */
 
-import { render, screen } from '@testing-library/react';
-import { expect, test } from 'vitest';
-import { RouterProvider } from '@tanstack/react-router';
-import { router } from '../../utils/mocks';
+import { cleanup, render, screen } from '@testing-library/react';
+import { userEvent } from '@testing-library/user-event';
+import { afterEach, expect, test, vi } from 'vitest';
 import { Button } from './Button';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 
-const queryClient = new QueryClient();
+afterEach(() => {
+  cleanup();
+});
 
 test('should render properly', () => {
+  render(<Button variant='primary'>This is a button</Button>);
+  const buttonText = screen.getByRole('button', { name: /this is a button/i });
+  expect(buttonText).toBeDefined();
+});
+
+test('should trigger a call when click', async () => {
+  const fn = vi.fn();
+  const user = userEvent.setup();
   render(
-    <QueryClientProvider client={queryClient}>
-      <RouterProvider router={router} defaultComponent={Button} />
-    </QueryClientProvider>
+    <Button variant='primary' onClick={() => fn()}>
+      This is a button
+    </Button>
   );
-  expect(true).toBeTruthy();
-  screen.debug();
+  const button = screen.getByRole('button', { name: /this is a button/i });
+  await user.click(button);
+  expect(fn).toHaveBeenCalled();
+  expect(fn).toHaveBeenCalledTimes(1);
 });
