@@ -2,6 +2,8 @@ import { Link } from '@tanstack/react-router';
 import Button from '../Button';
 import Input from '../Input';
 import './Form.css';
+import { Select } from '../Select/Select';
+import { stateOptions } from '../../utils/mocks';
 
 export const Form = () => {
   return (
@@ -21,6 +23,26 @@ export const Form = () => {
         name='Favorite Disney Movie'
         placeholder='Moana'
       />
+      <Select id='state-select' aria-expanded={false} label='State'>
+        <option
+          id={'select-default'}
+          aria-selected={true}
+          aria-label={'select-default'}
+          value={''}
+        >
+          Choose a state
+        </option>
+        {stateOptions.map((state: string) => (
+          <option
+            id={state}
+            aria-selected={false}
+            aria-label={state}
+            value={state}
+          >
+            {state}
+          </option>
+        ))}
+      </Select>
       <div className='form-cta'>
         <Button variant='primary'>Update Profile</Button>
         <Link to='/profile' aria-label='cancel button'>

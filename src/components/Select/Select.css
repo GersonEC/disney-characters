@@ -1,0 +1,22 @@
+.select {
+  display: flex;
+  flex-direction: column;
+}
+
+.select-label {
+  color: var(--gray);
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 4px 0;
+}
+
+.select-field {
+  padding: 8px;
+  border: 1px solid var(--gray-light);
+  border-radius: 4px;
+}
+
+.select-field:focus {
+  border: none;
+  outline: 1px solid var(--primary-color);
+}
