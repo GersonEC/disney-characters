@@ -29,5 +29,5 @@ The following are the main libraries inside the application
 - [tanstack/query](https://tanstack.com/query/latest) to handle the server state that the derive from api cals.
 - [tanstack/router](https://tanstack.com/router/latest) to handle the routing within the application.
 - [testing-library/react](https://testing-library.com/) for testing purposes.
-- [zod](https://www.npmjs.com/package/react-loading-icons) to validate the types of our server state
-- react-loading-icons to show a feedback to the user when loading server state.
+- [zod](https://zod.dev/) to validate the types of our server state
+- [react-loading-icons](https://www.npmjs.com/package/react-loading-icons) to show a feedback to the user when loading server state.
