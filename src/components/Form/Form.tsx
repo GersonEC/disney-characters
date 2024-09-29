@@ -4,6 +4,7 @@ import Input from '../Input';
 import './Form.css';
 import { Select } from '../Select/Select';
 import { stateOptions } from '../../utils/mocks';
+import { DatePicker } from '../DatePicker/DatePicker';
 
 export const Form = () => {
   return (
@@ -23,6 +24,7 @@ export const Form = () => {
         name='Favorite Disney Movie'
         placeholder='Moana'
       />
+      <DatePicker label='Birth Date' required />
       <Select id='state-select' aria-expanded={false} label='State'>
         <option
           id={'select-default'}

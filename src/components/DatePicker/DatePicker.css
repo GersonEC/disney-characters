@@ -1,0 +1,24 @@
+.date {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.date-label {
+  color: var(--gray);
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 4px 0;
+}
+
+.date-field {
+  padding: 8px;
+  border: 1px solid var(--gray-light);
+  border-radius: 4px;
+}
+
+.date-required {
+  color: var(--red);
+  font-weight: 600;
+  font-size: 0.9rem;
+}
