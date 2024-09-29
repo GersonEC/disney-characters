@@ -14,3 +14,11 @@
   display: flex;
   gap: 20px;
 }
+
+@media (max-width: 600px) {
+  .form-name,
+  .form-location,
+  .form-cta {
+    flex-direction: column;
+  }
+}

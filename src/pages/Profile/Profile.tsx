@@ -38,7 +38,7 @@ export const Profile = () => {
       </p>
       <div className='profile-cta'>
         <Link to='/edit-profile' aria-label='Go to edit profile page'>
-          <Button variant='primary'>Edite Profile</Button>
+          <Button variant='primary'>Edit Profile</Button>
         </Link>
         <Button variant='secondary' onClick={handleReset}>
           Reset Profile

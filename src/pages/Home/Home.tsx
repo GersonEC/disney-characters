@@ -28,7 +28,7 @@ export const Home = () => {
           )}
           <ul className='home-characters'>
             {characters.length > 0 ? (
-              characters.map((character: Character) => (
+              characters.slice(0, 10).map((character: Character) => (
                 <li
                   style={{ listStyle: 'none' }}
                   key={`${character.name}-${character._id}`}

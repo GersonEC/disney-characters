@@ -31,3 +31,16 @@
 h3 {
   margin: 8px 0;
 }
+
+@media (max-width: 600px) {
+  .details-info {
+    flex-direction: column;
+    align-items: center;
+    padding: 24px 0;
+  }
+  .details-info_picture {
+    height: 400px;
+    max-width: 300px;
+    object-fit: cover;
+  }
+}

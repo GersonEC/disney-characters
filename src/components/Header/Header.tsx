@@ -22,11 +22,17 @@ export const Header: React.FC<Props> = ({ handleSubmit }) => {
         placeholder='Find a character...'
         handleSubmit={handleSubmit}
       />
-      <Link to='/profile' aria-label='Go to profile page'>
-        <Button variant='primary' style='rounded'>
-          <img src={UserIcon} alt='User icon' height='26px' />
-        </Button>
-      </Link>
+      <div>
+        <Link
+          className='user-icon'
+          to='/profile'
+          aria-label='Go to profile page'
+        >
+          <Button variant='primary' style='rounded'>
+            <img src={UserIcon} alt='User icon' height='26px' />
+          </Button>
+        </Link>
+      </div>
     </header>
   );
 };
