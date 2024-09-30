@@ -16,21 +16,20 @@ export const Search: React.FC<SearchProps> = ({ handleSubmit, ...props }) => {
     setName(value);
   };
   return (
-    <search>
-      <form
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        onSubmit={(event: any) => handleSubmit(event, name)}
-      >
-        <input
-          className='input-search'
-          id={props.id}
-          type='search'
-          name={props.name}
-          placeholder={props.placeholder}
-          value={name}
-          onChange={handleChange}
-        />
-      </form>
-    </search>
+    <form
+      className='search'
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      onSubmit={(event: any) => handleSubmit(event, name)}
+    >
+      <input
+        className='input-search'
+        id={props.id}
+        type='search'
+        name={props.name}
+        placeholder={props.placeholder}
+        value={name}
+        onChange={handleChange}
+      />
+    </form>
   );
 };

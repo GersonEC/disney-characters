@@ -10,12 +10,13 @@ export const Profile = () => {
     if (window.confirm('Do you really want to reset your profile?')) {
       resetUser();
     }
-    resetUser();
   };
 
   const age = Number(
     new Date().getFullYear() - new Date(user.birthDate).getFullYear()
   );
+
+  console.log({ age });
 
   return (
     <div className='profile'>
