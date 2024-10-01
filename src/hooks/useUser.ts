@@ -31,7 +31,7 @@ type UserAction =
       type: 'reset_user';
     };
 
-function reducerfn(state: User, action: UserAction) {
+function reducerfn(_: User, action: UserAction) {
   if (action.type === 'update_user') {
     sessionStorage.setItem('user-information', JSON.stringify(action.payload));
     const newState = { ...action.payload };

@@ -1,8 +1,7 @@
-import { Link } from '@tanstack/react-router';
+import { Link, useParams } from '@tanstack/react-router';
 import Button from '../../components/Button';
 import FeaturedCharacters from '../../components/FeaturedCharacters';
 import { useGetCharacter } from '../../hooks/useGetCharacter';
-import { rootRoute } from '../../routes';
 import { useFilterCharacters } from '../../hooks/useFilterCharacters';
 import DefaultImage from '/src/assets/disney-default-image.jpg';
 import Loader from '../../components/Loader';
@@ -10,11 +9,13 @@ import React from 'react';
 import './Details.css';
 
 export const Details = () => {
-  const { characterId } = rootRoute.useParams();
+  const { characterId } = useParams({ from: '/details/$characterId' });
   const { data: filterCharacters } = useFilterCharacters();
   const featureCharacters = filterCharacters && filterCharacters.slice(0, 4);
 
-  const { status, data: character } = useGetCharacter({ id: characterId });
+  const { status, data: character } = useGetCharacter({
+    id: Number(characterId),
+  });
 
   React.useLayoutEffect(() => {
     window.scrollTo(0, 0);
